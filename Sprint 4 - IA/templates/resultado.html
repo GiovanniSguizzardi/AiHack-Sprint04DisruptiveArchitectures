@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Previsão</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            text-decoration: none;
+            color: #0891B2;
+            transition: color 0.3s ease;
+        }
+
+        .back-arrow:hover {
+            color: #036981;
+        }
+
+        .result-container {
+            background: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            word-wrap: break-word;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .confidence {
+            color: #036981;
+        }
+
+        .date-time {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .relatorio-ia {
+            margin-top: 30px;
+            font-size: 16px;
+            color: #333;
+            text-align: left;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://127.0.0.1:5000/" class="back-arrow">&#8592; Home</a>
+
+    <div class="result-container">
+        <h1>Resultado da Previsão com Imagem</h1>
+        <p><strong>Classe:</strong> {{ class_name }}</p>
+        <p class="confidence"><strong>Confiança:</strong> {{ confidence }}%</p>
+        <p class="date-time"><strong>Data:</strong> {{ data }} | <strong>Hora:</strong> {{ time }}</p>
+
+        <div class="relatorio-ia">
+            <h2>Relatório Gerado pela IA:</h2>
+            <p>{{ relatorio_ia | safe }}</p>
+        </div>
+    </div>
+</body>
+</html>

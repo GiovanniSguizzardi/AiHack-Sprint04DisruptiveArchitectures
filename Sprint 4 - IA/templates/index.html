@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f4f8;
+            margin: 0;
+        }
+
+        .upload-container {
+            background: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #0891B2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #036981;
+            transform: scale(1.05);
+        }
+
+        .upload-container p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .alerta-uso {
+            background-color: #ffeded;
+            color: #a94442;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            border: 1px solid #f5c6cb;
+            width: 100%;
+        }
+
+        .logo {
+			width: 200px;
+			height: 200px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <!-- Adicionando a logo -->
+        <img src="{{ url_for('static', filename='img/aihack_logo.png') }}" alt="Logo AIHack" class="logo">
+
+        <h1>Faça upload da sua imagem</h1>
+        <form action="/keras" method="POST" enctype="multipart/form-data">
+            <input type="file" name="imagem" accept="image/*">
+            <button type="submit">Upload</button>
+        </form>
+        <p>Formatos de imagem aceitos: JPG e PNG</p>
+        
+        <!-- Alerta sobre limite de uso da API -->
+        <div class="alerta-uso">
+            Atenção: O uso da API está limitado a 20 chamadas por minuto com um total de 1.000 chamadas por mês. Se você exceder este limite, poderá enfrentar interrupções no serviço.
+        </div>
+    </div>
+</body>
+</html>
