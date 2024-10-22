@@ -1,6 +1,7 @@
 # Aplicação de IA para Diagnóstico de Imagens Médicas
 
-Este projeto utiliza um modelo de Inteligência Artificial (IA) para análise de imagens médicas de pulmão e gera relatórios detalhados utilizando uma IA generativa.
+> [!NOTE]
+> Este projeto utiliza um modelo de Inteligência Artificial (IA) para análise de imagens médicas de pulmão e gera relatórios detalhados utilizando uma IA generativa.
 
 ## Funcionalidades
 
@@ -16,7 +17,6 @@ Este projeto utiliza um modelo de Inteligência Artificial (IA) para análise de
 - **PIL (Python Imaging Library)**: Para processamento de imagens.
 
 ## Como Configurar o Projeto Localmente
-
 ### Pré-requisitos
 
 - **Python 3.8+** instalado
@@ -26,7 +26,6 @@ Este projeto utiliza um modelo de Inteligência Artificial (IA) para análise de
     ```
 
 ### Passos
-
 1. Clone o repositório:
     ```bash
     git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
